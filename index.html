@@ -25,43 +25,217 @@
 
   <main class="container">
     <form id="orderForm" class="menu-form">
-      <!-- Seção de Carnes -->
-      <section class="menu-section">
-        <h2 class="section-title"><i class="fas fa-drumstick-bite"></i> Carnes</h2>
-        <div class="item-grid">
-          <div class="menu-item">
-            <div class="item-info">
-              <h3>Frango Assado</h3>
-              <p class="price">R$ 50,00 / unidade</p>
-            </div>
-            <input type="number" min="0" step="1" data-name="Frango Assado" data-price="50" data-unit="un" placeholder="0">
-          </div>
-          
-          <!-- Outros itens de carne... -->
-        </div>
-      </section>
-
-      <!-- Seções de acompanhamentos, bebidas etc... -->
-
-      <section class="customer-info">
-        <h2><i class="fas fa-user"></i> Seus Dados</h2>
-        <input type="text" id="name" placeholder="Nome completo" required>
-        <input type="tel" id="phone" placeholder="WhatsApp com DDD" required>
+      <div class="category">
+        <h2><i class="fas fa-drumstick-bite"></i> Carnes</h2>
         
-        <h3><i class="fas fa-truck"></i> Retirada</h3>
-        <select id="deliveryType" required>
-          <option value="">Como vai retirar?</option>
-          <option value="Retirada no local">Buscar no restaurante</option>
-          <option value="Delivery por App">Delivery (iFood/99Food)</option>
-        </select>
-        <input type="text" id="pickupCode" placeholder="Código do app (se delivery)">
-      </section>
-
-      <button type="submit" class="submit-btn">
-        <i class="fab fa-whatsapp"></i> Enviar Pedido
-      </button>
-    </form>
-  </main>
+        <div class="item-row">
+          <label>Costela Bovina</label>
+          <span class="price">R$ 70/kg</span>
+          <input type="number" min="0" step="0.1" name="costelaBovina" 
+                 data-price="70" data-unit="kg" placeholder="kg">
+          <span class="preview" id="costelaBovina_preview">R$ 0,00</span>
+        </div>
+      
+        <div class="item-row">
+          <label>Costela Suína</label>
+          <span class="price">R$ 60/kg</span>
+          <input type="number" min="0" step="0.1" name="costelaSuina" 
+                 data-price="60" data-unit="kg" placeholder="kg">
+          <span class="preview" id="costelaSuina_preview">R$ 0,00</span>
+        </div>
+      
+        <div class="item-row">
+          <label>Linguiça</label>
+          <span class="price">R$ 50/kg</span>
+          <input type="number" min="0" step="0.1" name="linguica" 
+                 data-price="50" data-unit="kg" placeholder="kg">
+          <span class="preview" id="linguica_preview">R$ 0,00</span>
+        </div>
+      
+        <div class="item-row">
+          <label>Frango Assado</label>
+          <span class="price">R$ 50/unid</span>
+          <input type="number" min="0" step="1" name="frango" 
+                 data-price="50" data-unit="un" placeholder="unidades">
+          <span class="preview" id="frango_preview">R$ 0,00</span>
+        </div>
+      </div>
+      
+      <!-- ACOMPANHAMENTOS -->
+      <div class="category">
+        <h2><i class="fas fa-utensils"></i> Acompanhamentos</h2>
+        
+        <div class="item-row">
+          <label>Batata em Conserva</label>
+          <span class="price">R$ 10/unid</span>
+          <input type="number" min="0" step="1" name="batata" 
+                 data-price="10" data-unit="un" placeholder="unidades">
+          <span class="preview" id="batata_preview">R$ 0,00</span>
+        </div>
+      
+        <div class="item-row">
+          <label>Feijão Tropeiro</label>
+          <span class="price">R$ 10/unid</span>
+          <input type="number" min="0" step="1" name="farofa" 
+                 data-price="10" data-unit="un" placeholder="unidades">
+          <span class="preview" id="farofa_preview">R$ 0,00</span>
+        </div>
+      
+        <div class="item-row">
+          <label>Maionese</label>
+          <span class="price">R$ 10/unid</span>
+          <input type="number" min="0" step="1" name="maionese" 
+                 data-price="10" data-unit="un" placeholder="unidades">
+          <span class="preview" id="maionese_preview">R$ 0,00</span>
+        </div>
+      </div>
+      
+      <!-- SOBREMESAS -->
+      <div class="category">
+        <h2><i class="fas fa-ice-cream"></i> Sobremesas</h2>
+        
+        <div class="item-row">
+          <label>Mousse de Maracujá</label>
+          <span class="price">R$ 15/unid</span>
+          <input type="number" min="0" step="1" name="mousse" 
+                 data-price="15" data-unit="un" placeholder="unidades">
+          <span class="preview" id="mousse_preview">R$ 0,00</span>
+        </div>
+      
+        <div class="item-row">
+          <label>Pudim de Coco</label>
+          <span class="price">R$ 15/unid</span>
+          <input type="number" min="0" step="1" name="pudim" 
+                 data-price="15" data-unit="un" placeholder="unidades">
+          <span class="preview" id="pudim_preview">R$ 0,00</span>
+        </div>
+      
+        <div class="item-row">
+          <label>Manjar de Coco</label>
+          <span class="price">R$ 15/unid</span>
+          <input type="number" min="0" step="1" name="manjar" 
+                 data-price="15" data-unit="un" placeholder="unidades">
+          <span class="preview" id="manjar_preview">R$ 0,00</span>
+        </div>
+      </div>
+      
+      <!-- BEBIDAS -->
+      <div class="category">
+        <h2><i class="fas fa-glass-cheers"></i> Bebidas</h2>
+        
+        <div class="item-row">
+          <label>Coca-Cola 2L</label>
+          <span class="price">R$ 13/unid</span>
+          <input type="number" min="0" step="1" name="coca2l" 
+                 data-price="13" data-unit="un" placeholder="unidades">
+          <span class="preview" id="coca2l_preview">R$ 0,00</span>
+        </div>
+      
+        <div class="item-row">
+          <label>Outros Refri 2L</label>
+          <span class="price">R$ 10/unid</span>
+          <input type="number" min="0" step="1" name="refri2l" 
+                 data-price="10" data-unit="un" placeholder="unidades">
+          <span class="preview" id="refri2l_preview">R$ 0,00</span>
+        </div>
+      
+        <div class="item-row">
+          <label>Latinhas (350ml)</label>
+          <span class="price">R$ 5/unid</span>
+          <input type="number" min="0" step="1" name="latinhas" 
+                 data-price="5" data-unit="un" placeholder="unidades">
+          <span class="preview" id="latinhas_preview">R$ 0,00</span>
+        </div>
+      
+        <div class="item-row">
+          <label>Heineken 269ml</label>
+          <span class="price">R$ 5/unid</span>
+          <input type="number" min="0" step="1" name="heineken" 
+                 data-price="5" data-unit="un" placeholder="unidades">
+          <span class="preview" id="heineken_preview">R$ 0,00</span>
+        </div>
+      
+        <div class="item-row">
+          <label>Original 269ml</label>
+          <span class="price">R$ 5/unid</span>
+          <input type="number" min="0" step="1" name="original" 
+                 data-price="5" data-unit="un" placeholder="unidades">
+          <span class="preview" id="original_preview">R$ 0,00</span>
+        </div>
+      </div>
+      
+      <style>
+        .category {
+          margin-bottom: 2rem;
+          padding: 1rem;
+          background: white;
+          border-radius: 10px;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+      
+        .category h2 {
+          color: #e63946;
+          border-bottom: 2px solid #eee;
+          padding-bottom: 0.5rem;
+          margin-bottom: 1rem;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+      
+        .item-row {
+          display: grid;
+          grid-template-columns: 2fr 1fr 1fr 1fr;
+          align-items: center;
+          gap: 15px;
+          padding: 12px;
+          margin-bottom: 10px;
+          background: #f8f9fa;
+          border-radius: 8px;
+        }
+      
+        .price {
+          font-weight: 600;
+          color: #2a9d8f;
+          text-align: center;
+        }
+      
+        .preview {
+          font-weight: bold;
+          color: #e63946;
+          text-align: right;
+          min-width: 80px;
+        }
+      
+        input {
+          padding: 8px 12px;
+          border: 1px solid #ddd;
+          border-radius: 6px;
+          width: 100%;
+          text-align: center;
+        }
+      
+        input:focus {
+          border-color: #e63946;
+          box-shadow: 0 0 0 2px rgba(230, 57, 70, 0.1);
+          outline: none;
+        }
+      </style>
+      
+      <script>
+        // Atualização em tempo real
+        document.querySelectorAll('input[type="number"]').forEach(input => {
+          const updatePreview = () => {
+            const price = parseFloat(input.dataset.price);
+            const quantity = parseFloat(input.value) || 0;
+            const previewElement = document.getElementById(`${input.name}_preview`);
+            previewElement.textContent = `R$ ${(price * quantity).toFixed(2)}`;
+          };
+      
+          input.addEventListener('input', updatePreview);
+          updatePreview(); // Inicializa os valores
+        });
+      </script>
 
   <!-- Carrinho Lateral -->
   <aside id="cart-sidebar" class="cart-sidebar">
