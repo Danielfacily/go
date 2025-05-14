@@ -1,1 +1,43 @@
-const prices={costelaBovina:70,costelaSuina:60,linguica:50,frango:50,batata:10,farofa:10,maionese:10,mouse:15,pudim:15,manjar:15,coca2l:13,refri2l:10,latinhas:5,heineken:5,original:5};function updateCart(){const e=document.getElementById("orderForm"),t=document.getElementById("cart");let a=0,n="<strong>Resumo do Pedido:</strong><ul>";for(let r in prices){const o=e.elements[r];if(o&&parseFloat(o.value)>0){const c=parseFloat(o.value),l=prices[r],s=c*l;a+=s,n+=`<li>${r}: ${c} x R$${l} = R$${s.toFixed(2)}</li>`}}n+=`</ul><strong>Total estimado: R$ ${a.toFixed(2)}</strong>`,t.innerHTML=n}window.addEventListener("DOMContentLoaded",()=>{const e=document.getElementById("orderForm");e.addEventListener("input",updateCart),e.addEventListener("submit",function(t){t.preventDefault();const a=document.getElementById("name").value.trim(),n=document.getElementById("phone").value.trim(),r=document.getElementById("deliveryType").value,o=document.getElementById("pickupCode").value.trim();let c=`📝 *Pedido Frango na Brasa*%0A👤 *Nome:* ${a}%0A📞 *Telefone:* ${n}%0A🚚 *Retirada:* ${r}%0A`;o&&r.includes("Aplicativo")&&(c+=`📦 *Código de Coleta:* ${o}%0A`),c+="%0A🍗 *Itens:*%0A";let l=!1;for(let i in prices){const d=e.elements[i];if(d&&parseFloat(d.value)>0){l=!0;const u=parseFloat(d.value),m=prices[i],p=u*m;c+=`- ${i}: ${u} x R$${m} = R$${p.toFixed(2)}%0A`}}if(!l)return void alert("Por favor, selecione ao menos um item para o pedido.");c+=`%0A💰 *Total estimado:* R$ ${parseFloat(document.getElementById("cart").innerText.match(/[\d,.]+$/)).toFixed(2)}%0A`;const s="5581999998888",f=`https://wa.me/${s}?text=${c}`;window.open(f,"_blank")})});
+form.addEventListener('submit', function (e) {
+    e.preventDefault(); // Impede envio padrão
+
+    const name = document.getElementById('name').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const deliveryType = document.getElementById('deliveryType').value;
+    const pickupCode = document.getElementById('pickupCode').value.trim();
+
+    let message = `*Pedido Frango na Brasa*\n\n`;
+    message += `*Cliente:* ${name}\n`;
+    message += `*Telefone:* ${phone}\n`;
+    message += `*Retirada:* ${deliveryType}\n`;
+    if (pickupCode && deliveryType.includes("Aplicativo")) {
+      message += `*Código de Coleta:* ${pickupCode}\n`;
+    }
+
+    message += `\n*Itens:* \n`;
+
+    let total = 0;
+
+    for (let name in prices) {
+      const input = form.elements[name];
+      if (input && parseFloat(input.value) > 0) {
+        const quantity = parseFloat(input.value);
+        const price = prices[name];
+        const itemTotal = quantity * price;
+        total += itemTotal;
+
+        let label = document.querySelector(`[name="${name}"]`).parentElement.querySelector('label').innerText;
+        message += `- ${label}: ${quantity} x R$${price} = R$${itemTotal.toFixed(2)}\n`;
+      }
+    }
+
+    message += `\n*Total estimado:* R$ ${total.toFixed(2)}`;
+
+    // Monta URL do WhatsApp
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappNumber = '5511970565356'; // Altere para o número oficial do restaurante
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+    window.open(whatsappURL, '_blank');
+  });
+
