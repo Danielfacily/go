@@ -1,11 +1,12 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Frango na Brasa - Cardápio</title>
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="logo-container">
@@ -16,41 +17,40 @@
   <main class="container">
     <form id="orderForm">
       <div class="category">
-        <h2 onclick="toggleSection(this)">Carnes (preço por kg ou unidade)</h2>
-        <div class="item"><label><input type="number" min="0" step="0.1" name="costelaBovina" placeholder="kg"> Costela Bovina (R$ 70/kg)</label></div>
-        <div class="item"><label><input type="number" min="0" step="0.1" name="costelaSuina" placeholder="kg"> Costela Suína (R$ 60/kg)</label></div>
-        <div class="item"><label><input type="number" min="0" step="0.1" name="linguica" placeholder="kg"> Linguiça (R$ 50/kg)</label></div>
-        <div class="item"><label><input type="number" min="0" step="1" name="frango" placeholder="unidades"> Frango Assado (R$ 50/unidade)</label></div>
+        <h2>Carnes (preço por kg ou unidade)</h2>
+        <div class="item-row"><label>Costela Bovina (R$ 70/kg)</label><input type="number" min="0" step="0.1" name="costelaBovina" placeholder="kg"></div>
+        <div class="item-row"><label>Costela Suína (R$ 60/kg)</label><input type="number" min="0" step="0.1" name="costelaSuina" placeholder="kg"></div>
+        <div class="item-row"><label>Linguiça (R$ 50/kg)</label><input type="number" min="0" step="0.1" name="linguica" placeholder="kg"></div>
+        <div class="item-row"><label>Frango Assado (R$ 50/unidade)</label><input type="number" min="0" step="1" name="frango" placeholder="unidades"></div>
       </div>
 
       <div class="category">
-        <h2 onclick="toggleSection(this)">Acompanhamentos (R$ 10 cada)</h2>
-        <label><input type="checkbox" name="batata"> Pote de Batata</label>
-        <label><input type="checkbox" name="farofa"> Farofa/Feijão Tropeiro</label>
-        <label><input type="checkbox" name="maionese"> Maionese</label>
+        <h2>Acompanhamentos (R$ 10 cada)</h2>
+        <div class="item-row"><label>Pote de Batata</label><input type="number" min="0" step="1" name="batata" placeholder="qtde"></div>
+        <div class="item-row"><label>Farofa/Feijão Tropeiro</label><input type="number" min="0" step="1" name="farofa" placeholder="qtde"></div>
+        <div class="item-row"><label>Maionese</label><input type="number" min="0" step="1" name="maionese" placeholder="qtde"></div>
       </div>
 
       <div class="category">
-        <h2 onclick="toggleSection(this)">Sobremesas (R$ 15 cada)</h2>
-        <label><input type="checkbox" name="mouse"> Mousse de Maracujá</label>
-        <label><input type="checkbox" name="pudim"> Pudim de Coco</label>
-        <label><input type="checkbox" name="manjar"> Manjar de Coco</label>
+        <h2>Sobremesas (R$ 15 cada)</h2>
+        <div class="item-row"><label>Mousse de Maracujá</label><input type="number" min="0" step="1" name="mouse" placeholder="qtde"></div>
+        <div class="item-row"><label>Pudim de Coco</label><input type="number" min="0" step="1" name="pudim" placeholder="qtde"></div>
+        <div class="item-row"><label>Manjar de Coco</label><input type="number" min="0" step="1" name="manjar" placeholder="qtde"></div>
       </div>
 
       <div class="category">
-        <h2 onclick="toggleSection(this)">Bebidas</h2>
-        <label><input type="checkbox" name="coca2l"> Coca-Cola 2L (R$ 13)</label>
-        <label><input type="checkbox" name="refri2l"> Outros Refri 2L (R$ 10)</label>
-        <label><input type="checkbox" name="latinhas"> Latinha refri (R$ 5)</label>
-        <label><input type="checkbox" name="heineken"> Heineken 269ml (R$ 5)</label>
-        <label><input type="checkbox" name="original"> Original 269ml (R$ 5)</label>
+        <h2>Bebidas</h2>
+        <div class="item-row"><label>Coca-Cola 2L (R$ 13)</label><input type="number" min="0" step="1" name="coca2l" placeholder="qtde"></div>
+        <div class="item-row"><label>Outros Refri 2L (R$ 10)</label><input type="number" min="0" step="1" name="refri2l" placeholder="qtde"></div>
+        <div class="item-row"><label>Latinha refri (R$ 5)</label><input type="number" min="0" step="1" name="latinhas" placeholder="qtde"></div>
+        <div class="item-row"><label>Heineken 269ml (R$ 5)</label><input type="number" min="0" step="1" name="heineken" placeholder="qtde"></div>
+        <div class="item-row"><label>Original 269ml (R$ 5)</label><input type="number" min="0" step="1" name="original" placeholder="qtde"></div>
       </div>
 
       <div class="category">
         <h2>Dados do Cliente</h2>
         <input type="text" id="name" placeholder="Nome completo" required />
         <input type="tel" id="phone" placeholder="Telefone com DDD" required />
-
         <h3>Forma de Retirada</h3>
         <select id="deliveryType" required>
           <option value="">Selecione</option>
@@ -64,5 +64,7 @@
       <button type="submit">Enviar Pedido no WhatsApp</button>
     </form>
   </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
