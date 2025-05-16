@@ -16,128 +16,244 @@
       <p style="color: #5D4037;">O melhor da região</p>
       <p style="color: #5D4037;">⭐⭐⭐</p>
     </div>
-    <div class="cart-info">
-      <span id="cart-counter">0</span>
-      <i class="fas fa-shopping-cart"></i>
     </div>
+    <button id="cart-btn" class="cart-btn">
+      <i class="fas fa-shopping-cart"></i>
+      <span id="cart-counter">0</span>
+    </button>
   </header>
 
   <main class="container">
     <form id="orderForm" class="menu-form">
-      <!-- DADOS DO CLIENTE -->
-      <div class="category client-data">
-        <h2><i class="fas fa-user"></i> Seus Dados</h2>
-        <div class="item-row">
-          <label>Nome Completo</label>
-          <input type="text" id="name" required placeholder="Digite seu nome">
-        </div>
-        <div class="item-row">
-          <label>Telefone</label>
-          <input type="tel" id="phone" required placeholder="(11) 99999-9999">
-        </div>
-      </div>
-
-      <!-- ESPECIALIDADE PRINCIPAL -->
-      <div class="category main-item">
-        <h2><i class="fas fa-star"></i> Especialidade da Casa</h2>
-        <div class="item-row highlight">
-          <label>Frango Assado na Brasa (Inteiro)</label>
-          <span class="price">R$ 50,00<small>unidade</small></span>
-          <input type="number" min="0" step="1" name="frango" 
-                data-price="50" data-unit="un" placeholder="un">
-          <span class="preview" id="frango_preview">R$ 0,00</span>
-        </div>
-      </div>
-
-      <!-- CARNES -->
       <div class="category">
         <h2><i class="fas fa-drumstick-bite"></i> Carnes</h2>
+        
+        <div class="item-row">
+          <label>Frango Assado na Brasa</label>
+          <span class="price">R$ 50,00<br><small>Un</small></span>
+          <input type="number" min="0" step="1" name="frango" 
+                 data-price="50" data-unit="un" placeholder="unidades">
+          <span class="preview" id="frango_preview">R$ 0,00</span>
+        </div>
+
         <div class="item-row">
           <label>Costela Bovina</label>
-          <span class="price">R$ 70,00<small>kg</small></span>
+          <span class="price">R$ 70,00<br><small>Kg</small></span>
           <input type="number" min="0" step="0.1" name="costelaBovina" 
-                data-price="70" data-unit="kg" placeholder="kg">
+                 data-price="70" data-unit="kg" placeholder="kg">
           <span class="preview" id="costelaBovina_preview">R$ 0,00</span>
         </div>
 
         <div class="item-row">
           <label>Costela Suína</label>
-          <span class="price">R$ 60,00<small>kg</small></span>
+          <span class="price">R$ 60,00<br><small>Kg</small></span>
           <input type="number" min="0" step="0.1" name="costelaSuina" 
-                data-price="60" data-unit="kg" placeholder="kg">
+                 data-price="60" data-unit="kg" placeholder="kg">
           <span class="preview" id="costelaSuina_preview">R$ 0,00</span>
         </div>
-      </div>
 
+        <div class="item-row">
+          <label>Linguiça Na Brasa </label>
+          <span class="price">R$ 50,00<br><small>Kg</small></span>
+          <input type="number" min="0" step="0.1" name="linguica" 
+                 data-price="50" data-unit="kg" placeholder="kg">
+          <span class="preview" id="linguica_preview">R$ 0,00</span>
+      
+      </div>
+      
       <!-- ACOMPANHAMENTOS -->
       <div class="category">
-        <h2><img src="pudim-icon.png" alt="Acompanhamentos" class="pudim-icon"> Acompanhamentos</h2>
+        <h2><i class="fas fa-utensils"></i> Acompanhamentos</h2>
+        
         <div class="item-row">
           <label>Batata em Conserva</label>
-          <span class="price">R$ 10,00<small>emb. 500g</small></span>
+          <span class="price">R$ 10/unid</span>
           <input type="number" min="0" step="1" name="batata" 
-                data-price="10" data-unit="un" placeholder="un">
+                 data-price="10" data-unit="un" placeholder="unidades">
           <span class="preview" id="batata_preview">R$ 0,00</span>
         </div>
-
+      
         <div class="item-row">
           <label>Feijão Tropeiro</label>
-          <span class="price">R$ 10,00<small>emb. 500g</small></span>
+          <span class="price">R$ 10/unid</span>
           <input type="number" min="0" step="1" name="farofa" 
-                data-price="10" data-unit="un" placeholder="un">
+                 data-price="10" data-unit="un" placeholder="unidades">
           <span class="preview" id="farofa_preview">R$ 0,00</span>
         </div>
+      
+        <div class="item-row">
+          <label>Maionese</label>
+          <span class="price">R$ 10/unid</span>
+          <input type="number" min="0" step="1" name="maionese" 
+                 data-price="10" data-unit="un" placeholder="unidades">
+          <span class="preview" id="maionese_preview">R$ 0,00</span>
+        </div>
       </div>
-
+      
       <!-- SOBREMESAS -->
       <div class="category">
-        <h2><img src="pudim-icon.png" alt="Sobremesas" class="pudim-icon"> Sobremesas</h2>
+        <h2><i class="fas fa-ice-cream"></i> Sobremesas</h2>
+        
         <div class="item-row">
           <label>Mousse de Maracujá</label>
-          <span class="price">R$ 15,00<small>emb. 500g</small></span>
+          <span class="price">R$ 15/unid</span>
           <input type="number" min="0" step="1" name="mousse" 
-                data-price="15" data-unit="un" placeholder="un">
+                 data-price="15" data-unit="un" placeholder="unidades">
           <span class="preview" id="mousse_preview">R$ 0,00</span>
         </div>
+      
+        <div class="item-row">
+          <label>Pudim de Coco</label>
+          <span class="price">R$ 15/unid</span>
+          <input type="number" min="0" step="1" name="pudim" 
+                 data-price="15" data-unit="un" placeholder="unidades">
+          <span class="preview" id="pudim_preview">R$ 0,00</span>
+        </div>
+      
+        <div class="item-row">
+          <label>Manjar de Coco</label>
+          <span class="price">R$ 15/unid</span>
+          <input type="number" min="0" step="1" name="manjar" 
+                 data-price="15" data-unit="un" placeholder="unidades">
+          <span class="preview" id="manjar_preview">R$ 0,00</span>
+        </div>
       </div>
-
-      <!-- BEBIDAS DETALHADAS -->
+      
+      <!-- BEBIDAS -->
       <div class="category">
         <h2><i class="fas fa-glass-cheers"></i> Bebidas</h2>
+        
         <div class="item-row">
           <label>Coca-Cola 2L</label>
-          <span class="price">R$ 13,00<small>unidade</small></span>
+          <span class="price">R$ 13/unid</span>
           <input type="number" min="0" step="1" name="coca2l" 
-                data-price="13" data-unit="un" placeholder="un">
+                 data-price="13" data-unit="un" placeholder="unidades">
           <span class="preview" id="coca2l_preview">R$ 0,00</span>
         </div>
-
+      
         <div class="item-row">
-          <label>Água Mineral 500ml</label>
-          <span class="price">R$ 5,00<small>unidade</small></span>
-          <input type="number" min="0" step="1" name="agua" 
-                data-price="5" data-unit="un" placeholder="un">
-          <span class="preview" id="agua_preview">R$ 0,00</span>
+          <label>Outros Refri 2L</label>
+          <span class="price">R$ 10/unid</span>
+          <input type="number" min="0" step="1" name="refri2l" 
+                 data-price="10" data-unit="un" placeholder="unidades">
+          <span class="preview" id="refri2l_preview">R$ 0,00</span>
+        </div>
+      
+        <div class="item-row">
+          <label>Latinhas (350ml)</label>
+          <span class="price">R$ 5/unid</span>
+          <input type="number" min="0" step="1" name="latinhas" 
+                 data-price="5" data-unit="un" placeholder="unidades">
+          <span class="preview" id="latinhas_preview">R$ 0,00</span>
+        </div>
+      
+        <div class="item-row">
+          <label>Heineken 269ml</label>
+          <span class="price">R$ 5/unid</span>
+          <input type="number" min="0" step="1" name="heineken" 
+                 data-price="5" data-unit="un" placeholder="unidades">
+          <span class="preview" id="heineken_preview">R$ 0,00</span>
+        </div>
+      
+        <div class="item-row">
+          <label>Original 269ml</label>
+          <span class="price">R$ 5/unid</span>
+          <input type="number" min="0" step="1" name="original" 
+                 data-price="5" data-unit="un" placeholder="unidades">
+          <span class="preview" id="original_preview">R$ 0,00</span>
         </div>
       </div>
+      
+      <style>
+        .category {
+          margin-bottom: 2rem;
+          padding: 1rem;
+          background: white;
+          border-radius: 10px;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+      
+        .category h2 {
+          color: #e63946;
+          border-bottom: 2px solid #eee;
+          padding-bottom: 0.5rem;
+          margin-bottom: 1rem;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+      
+        .item-row {
+          display: grid;
+          grid-template-columns: 2fr 1fr 1fr 1fr;
+          align-items: center;
+          gap: 15px;
+          padding: 12px;
+          margin-bottom: 10px;
+          background: #f8f9fa;
+          border-radius: 8px;
+        }
+      
+        .price {
+          font-weight: 600;
+          color: #2a9d8f;
+          text-align: center;
+        }
+      
+        .preview {
+          font-weight: bold;
+          color: #e63946;
+          text-align: right;
+          min-width: 80px;
+        }
+      
+        input {
+          padding: 8px 12px;
+          border: 1px solid #ddd;
+          border-radius: 6px;
+          width: 100%;
+          text-align: center;
+        }
+      
+        input:focus {
+          border-color: #e63946;
+          box-shadow: 0 0 0 2px rgba(230, 57, 70, 0.1);
+          outline: none;
+        }
+      </style>
+      
+      <script>
+        // Atualização em tempo real
+        document.querySelectorAll('input[type="number"]').forEach(input => {
+          const updatePreview = () => {
+            const price = parseFloat(input.dataset.price);
+            const quantity = parseFloat(input.value) || 0;
+            const previewElement = document.getElementById(`${input.name}_preview`);
+            previewElement.textContent = `R$ ${(price * quantity).toFixed(2)}`;
+          };
+      
+          input.addEventListener('input', updatePreview);
+          updatePreview(); // Inicializa os valores
+        });
+      </script>
 
-      <!-- RESUMO DO PEDIDO -->
-      <div class="order-summary">
-        <h2><i class="fas fa-receipt"></i> Resumo do Pedido</h2>
-        <div id="cart-items" class="cart-items"></div>
-        <div class="cart-total">
-          <span>Total:</span>
-          <span id="cart-total">R$ 0,00</span>
-        </div>
-
-        <div class="observation-box">
-          <label>Observações:</label>
-          <textarea id="observacoes" placeholder="Ex: Ponto da carne, retirar ingredientes..." rows="3"></textarea>
-        </div>
-
-        <button type="submit" class="checkout-btn">
-          <i class="fab fa-whatsapp"></i> Enviar Pedido via WhatsApp
-        </button>
+  <!-- Carrinho Lateral -->
+  <aside id="cart-sidebar" class="cart-sidebar">
+    <div class="cart-header">
+      <h3>Seu Pedido</h3>
+      <button id="close-cart" class="close-btn">&times;</button>
+    </div>
+    <div id="cart-items" class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total</span>
+        <span id="cart-total">R$ 0,00</span>
       </div>
-    </form>
-  </main>
+      <button id="checkout-btn" class="checkout-btn">Confirmar Pedido</button>
+    </div>
+  </aside>
+
+  <div class="overlay" id="overlay"></div>
+  <script src="script.js"></script>
+</body>
+</html>
