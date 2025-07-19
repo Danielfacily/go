@@ -9,19 +9,267 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="app">
-    <button id="cart-btn" style="display:none"></button>
-    <button id="close-cart" style="display:none"></button>
-    <form id="orderForm" style="display:none">
-      <input type="text" id="name">
-      <input type="text" id="phone">
+  <header class="header">
+    <div class="logo-container">
+      <img src="https://images.unsplash.com/photo-1617692855027-33b14f061079?q=80&w=500&auto=format&fit=crop" alt="Frango na Brasa" class="logo">
+      <div class="logo-text">
+        <h1>Frango na Brasa</h1>
+        <p>O melhor da região</p>
+        <p>⭐⭐⭐⭐⭐</p>
+      </div>
+    </div>
+    <button id="cart-btn" class="cart-btn">
+      <i class="fas fa-shopping-cart"></i>
+      <span id="cart-counter">0</span>
+    </button>
+  </header>
+
+  <main class="container">
+    <form id="orderForm" class="menu-form">
+      <!-- Informações do Cliente -->
+      <div class="client-info">
+        <h2><i class="fas fa-user"></i> Seus Dados</h2>
+        <div class="form-group">
+          <label for="name">Nome Completo</label>
+          <input type="text" id="name" class="form-control" placeholder="Digite seu nome" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Telefone</label>
+          <input type="tel" id="phone" class="form-control" placeholder="(00) 00000-0000" required>
+        </div>
+      </div>
+      
+      <!-- CARNES -->
+      <div class="category">
+        <div class="category-header">
+          <i class="fas fa-drumstick-bite"></i>
+          <h2>Carnes</h2>
+        </div>
+        <div class="category-items">
+          <div class="item-row">
+            <div class="item-name">Frango Assado na Brasa</div>
+            <div class="price">
+              R$ 50,00
+              <small>Unidade</small>
+            </div>
+            <input type="number" min="0" step="1" name="frango" 
+                   data-name="Frango Assado na Brasa" data-price="50" data-unit="un" placeholder="0" class="item-input">
+            <div class="preview" id="frango_preview">R$ 0,00</div>
+          </div>
+
+          <div class="item-row">
+            <div class="item-name">Costela Bovina</div>
+            <div class="price">
+              R$ 70,00
+              <small>Quilo</small>
+            </div>
+            <input type="number" min="0" step="0.1" name="costelaBovina" 
+                   data-name="Costela Bovina" data-price="70" data-unit="kg" placeholder="0.0" class="item-input">
+            <div class="preview" id="costelaBovina_preview">R$ 0,00</div>
+          </div>
+
+          <div class="item-row">
+            <div class="item-name">Costela Suína</div>
+            <div class="price">
+              R$ 60,00
+              <small>Quilo</small>
+            </div>
+            <input type="number" min="0" step="0.1" name="costelaSuina" 
+                   data-name="Costela Suína" data-price="60" data-unit="kg" placeholder="0.0" class="item-input">
+            <div class="preview" id="costelaSuina_preview">R$ 0,00</div>
+          </div>
+
+          <div class="item-row">
+            <div class="item-name">Linguiça Na Brasa</div>
+            <div class="price">
+              R$ 50,00
+              <small>Quilo</small>
+            </div>
+            <input type="number" min="0" step="0.1" name="linguica" 
+                   data-name="Linguiça Na Brasa" data-price="50" data-unit="kg" placeholder="0.0" class="item-input">
+            <div class="preview" id="linguica_preview">R$ 0,00</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- ACOMPANHAMENTOS -->
+      <div class="category">
+        <div class="category-header">
+          <i class="fas fa-utensils"></i>
+          <h2>Acompanhamentos</h2>
+        </div>
+        <div class="category-items">
+          <div class="item-row">
+            <div class="item-name">Batata em Conserva</div>
+            <div class="price">
+              R$ 10,00
+              <small>Unidade</small>
+            </div>
+            <input type="number" min="0" step="1" name="batata" 
+                   data-name="Batata em Conserva" data-price="10" data-unit="un" placeholder="0" class="item-input">
+            <div class="preview" id="batata_preview">R$ 0,00</div>
+          </div>
+        
+          <div class="item-row">
+            <div class="item-name">Feijão Tropeiro</div>
+            <div class="price">
+              R$ 10,00
+              <small>Unidade</small>
+            </div>
+            <input type="number" min="0" step="1" name="farofa" 
+                   data-name="Feijão Tropeiro" data-price="10" data-unit="un" placeholder="0" class="item-input">
+            <div class="preview" id="farofa_preview">R$ 0,00</div>
+          </div>
+        
+          <div class="item-row">
+            <div class="item-name">Maionese</div>
+            <div class="price">
+              R$ 10,00
+              <small>Unidade</small>
+            </div>
+            <input type="number" min="0" step="1" name="maionese" 
+                   data-name="Maionese" data-price="10" data-unit="un" placeholder="0" class="item-input">
+            <div class="preview" id="maionese_preview">R$ 0,00</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- SOBREMESAS -->
+      <div class="category">
+        <div class="category-header">
+          <i class="fas fa-ice-cream"></i>
+          <h2>Sobremesas</h2>
+        </div>
+        <div class="category-items">
+          <div class="item-row">
+            <div class="item-name">Mousse de Maracujá</div>
+            <div class="price">
+              R$ 15,00
+              <small>Unidade</small>
+            </div>
+            <input type="number" min="0" step="1" name="mousse" 
+                   data-name="Mousse de Maracujá" data-price="15" data-unit="un" placeholder="0" class="item-input">
+            <div class="preview" id="mousse_preview">R$ 0,00</div>
+          </div>
+        
+          <div class="item-row">
+            <div class="item-name">Pudim de Coco</div>
+            <div class="price">
+              R$ 15,00
+              <small>Unidade</small>
+            </div>
+            <input type="number" min="0" step="1" name="pudim" 
+                   data-name="Pudim de Coco" data-price="15" data-unit="un" placeholder="0" class="item-input">
+            <div class="preview" id="pudim_preview">R$ 0,00</div>
+          </div>
+        
+          <div class="item-row">
+            <div class="item-name">Manjar de Coco</div>
+            <div class="price">
+              R$ 15,00
+              <small>Unidade</small>
+            </div>
+            <input type="number" min="0" step="1" name="manjar" 
+                   data-name="Manjar de Coco" data-price="15" data-unit="un" placeholder="0" class="item-input">
+            <div class="preview" id="manjar_preview">R$ 0,00</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- BEBIDAS -->
+      <div class="category">
+        <div class="category-header">
+          <i class="fas fa-glass-cheers"></i>
+          <h2>Bebidas</h2>
+        </div>
+        <div class="category-items">
+          <div class="item-row">
+            <div class="item-name">Coca-Cola 2L</div>
+            <div class="price">
+              R$ 13,00
+              <small>Unidade</small>
+            </div>
+            <input type="number" min="0" step="1" name="coca2l" 
+                   data-name="Coca-Cola 2L" data-price="13" data-unit="un" placeholder="0" class="item-input">
+            <div class="preview" id="coca2l_preview">R$ 0,00</div>
+          </div>
+        
+          <div class="item-row">
+            <div class="item-name">Outros Refri 2L</div>
+            <div class="price">
+              R$ 10,00
+              <small>Unidade</small>
+            </div>
+            <input type="number" min="0" step="1" name="refri2l" 
+                   data-name="Outros Refri 2L" data-price="10" data-unit="un" placeholder="0" class="item-input">
+            <div class="preview" id="refri2l_preview">R$ 0,00</div>
+          </div>
+        
+          <div class="item-row">
+            <div class="item-name">Latinhas (350ml)</div>
+            <div class="price">
+              R$ 5,00
+              <small>Unidade</small>
+            </div>
+            <input type="number" min="0" step="1" name="latinhas" 
+                   data-name="Latinhas (350ml)" data-price="5" data-unit="un" placeholder="0" class="item-input">
+            <div class="preview" id="latinhas_preview">R$ 0,00</div>
+          </div>
+        
+          <div class="item-row">
+            <div class="item-name">Heineken 269ml</div>
+            <div class="price">
+              R$ 5,00
+              <small>Unidade</small>
+            </div>
+            <input type="number" min="0" step="1" name="heineken" 
+                   data-name="Heineken 269ml" data-price="5" data-unit="un" placeholder="0" class="item-input">
+            <div class="preview" id="heineken_preview">R$ 0,00</div>
+          </div>
+        
+          <div class="item-row">
+            <div class="item-name">Original 269ml</div>
+            <div class="price">
+              R$ 5,00
+              <small>Unidade</small>
+            </div>
+            <input type="number" min="0" step="1" name="original" 
+                   data-name="Original 269ml" data-price="5" data-unit="un" placeholder="0" class="item-input">
+            <div class="preview" id="original_preview">R$ 0,00</div>
+          </div>
+        </div>
+      </div>
+      
+      <button type="submit" class="submit-btn">
+        <i class="fas fa-whatsapp"></i> Finalizar Pedido via WhatsApp
+      </button>
     </form>
-    <div id="cart-sidebar"></div>
-    <div id="cart-items"></div>
-    <div id="cart-total"></div>
-    <div id="cart-counter"></div>
-    <div id="overlay"></div>
-  </div>
+  </main>
+
+  <!-- Carrinho Lateral -->
+  <aside id="cart-sidebar" class="cart-sidebar">
+    <div class="cart-header">
+      <h3>Seu Pedido</h3>
+      <button id="close-cart" class="close-btn">&times;</button>
+    </div>
+    <div id="cart-items" class="cart-items">
+      <div class="empty-cart">
+        <i class="fas fa-shopping-cart"></i>
+        <p>Seu carrinho está vazio</p>
+        <p>Adicione itens ao seu pedido</p>
+      </div>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total</span>
+        <span id="cart-total">R$ 0,00</span>
+      </div>
+      <button id="checkout-btn" class="checkout-btn">Confirmar Pedido</button>
+    </div>
+  </aside>
+
+  <div class="overlay" id="overlay"></div>
+  
   <script src="script.js"></script>
 </body>
 </html>
